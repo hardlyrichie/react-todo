@@ -35,3 +35,19 @@ body {
   text-decoration: line-through;
   background-color: grey;
 }
+
+
+.form {
+  display: inline-block;
+}
+
+.form > input {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  padding: none;
+  outline: none;
+  width: inherit;
+}
+

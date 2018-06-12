@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // For testing, clear localstorage
     localStorage.clear();
 
     if (!localStorage.getItem('todos')) {

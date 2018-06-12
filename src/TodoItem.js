@@ -46,7 +46,7 @@ class TodoItem extends Component {
 
     if (this.state.editable) {
       todo = (
-        <form onSubmit={this.handleEditSubmit}>
+        <form onSubmit={this.handleEditSubmit} className='form'>
           <input type="text" defaultValue={this.props.todo} ref={input => this.input = input} onBlur={this.handleEditSubmit}/>
         </form>
       );
