@@ -12,6 +12,7 @@ class TodoItem extends Component {
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleEditSubmit = this.handleEditSubmit.bind(this);    
+    this.handleCheck = this.handleCheck.bind(this);   
   }
 
   handleDeleteItem() {
@@ -28,6 +29,10 @@ class TodoItem extends Component {
     this.props.onEdit(this.input.value, this.props.todo);
 
     this.setState({ editable: false });    
+  }
+
+  handleCheck(event) {
+    this.setState({ isChecked: event.target.checked });
   }
 
   componentDidUpdate() {
@@ -50,8 +55,8 @@ class TodoItem extends Component {
     }
 
     return (
-      <div>
-        <input type="checkbox"/>
+      <div className={this.state.isChecked ? 'TodoItem disabled' : 'TodoItem'}>
+        <input type="checkbox" onChange={this.handleCheck}/>
         <span onDoubleClick={this.handleEdit}>
           {todo}
         </span>
